@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [#toda url precisa ficar dentro de urlpatterns
-    path('cadastro/', views.cadastro, name="cadastro")
+#toda url precisa ficar dentro de urlpatterns. Toda pagina dentro do app recebe uma url diferente, e aqui organizamos as rotas
+urlpatterns = [
+    path('cadastro/', views.cadastro, name="cadastro"),
+    path('login/', views.login, name="login")
 ]
