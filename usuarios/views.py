@@ -38,7 +38,7 @@ def cadastro(request):
             email=email,
             password=senha
         )
-        return redirect('cadastro')
+    return redirect('login')
 
 def login(request):
     if request.method == "GET":
@@ -55,3 +55,7 @@ def login(request):
 
         messages.add_message(request, constants.ERROR, 'Usuário ou senha inválidos')
         return redirect ('usuarios/login')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/usuarios/login')
